@@ -135,7 +135,7 @@ async def cmd_list_employees(message: Message):
 
 # ─── ASOSIY FUNKSIYA: rasm qabul qilish ─────────────────────────────────────
 
-@dp.message(F.photo)
+@dp.message(F.photo | F.text | F.document | F.video)
 async def handle_photo(message: Message):
     """Guruhdan rasm kelsa, soat va whitelist tekshiruvi."""
     # Faqat belgilangan guruhdan
