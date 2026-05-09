@@ -151,12 +151,12 @@ async def handle_photo(message: Message):
     # O'zbekiston vaqti
     now_uz = datetime.now(TIMEZONE)
 
-    # Soat 10:00 dan oldinmi?
-   if now_uz.hour < 9:
-    return
+    # Faqat 09:00 - 10:00 oralig'ida
+    if now_uz.hour < 9:
+        return
 
-if now_uz.hour >= REPORT_HOUR:
-    return
+    if now_uz.hour >= REPORT_HOUR:
+        return
 
     # Bugunmi?
     today = now_uz.date().isoformat()
