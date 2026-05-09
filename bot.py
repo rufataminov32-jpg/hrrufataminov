@@ -23,7 +23,7 @@ BOT_TOKEN   = os.getenv("BOT_TOKEN", "")
 GROUP_ID    = int(os.getenv("GROUP_ID", "0"))          # Guruh chat_id (manfiy raqam)
 ADMIN_IDS   = [int(x) for x in os.getenv("ADMIN_IDS", "").split(",") if x.strip()]
 TIMEZONE    = pytz.timezone("Asia/Tashkent")           # UTC+5
-REPORT_HOUR = 10                                        # Hisobot qabul qilish chegarasi (10:00)
+REPORT_HOUR = 18                                        # Hisobot qabul qilish chegarasi (10:00)
 
 # ─── Init ────────────────────────────────────────────────────────────────────
 bot = Bot(token=BOT_TOKEN)
