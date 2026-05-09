@@ -154,9 +154,10 @@ async def handle_photo(message: Message):
     # Soat 10:00 dan oldinmi?
     if now_uz.hour >= REPORT_HOUR:
         await message.reply(
-            f"⏰ Hisobot qabul qilish vaqti tugadi (10:00). "
-            f"Screenshot qabul qilinmadi.",
-        )
+    f"⏰ Hisobot qabul qilish vaqti tugadi (10:00).\n\n"
+    f"📌 Kechikib hisobot topshirish ishga mas'uliyatsiz munosabatni bildiradi.\n\n"
+    f"Ertaga o'z vaqtida topshirishga harakat qiling!",
+)
         return
 
     # Bugunmi?
