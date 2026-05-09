@@ -216,13 +216,14 @@ async def send_daily_report():
 async def main():
     db.init()
 
-    scheduler = AsyncIOScheduler(timezone=TIMEZONE)
-    scheduler.add_job(
-        send_daily_report,
-        trigger="cron",
-        hour=REPORT_HOUR,
-        minute=0,
-    )
+    from datetime import datetime as dt
+now = dt.now()
+scheduler.add_job(
+    send_daily_report,
+    trigger="cron",
+    hour=now.hour,
+    minute=now.minute + 2,
+)
     scheduler.start()
     logger.info(f"Scheduler ishga tushdi. Hisobot soat {REPORT_HOUR}:00 (Toshkent vaqti) da yuboriladi.")
 
