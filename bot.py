@@ -86,9 +86,14 @@ async def cmd_add_employee(message: Message):
         return
 
     try:
-        user_id   = int(parts[1])
-        full_name = parts[2]
-        username  = parts[3].lstrip("@") if len(parts) > 3 else ""
+        user_id = int(parts[1])
+        # Username ni oxiridan ajratib olamiz
+        if len(parts) > 3 and parts[-1].startswith("@"):
+            username  = parts[-1].lstrip("@")
+            full_name = " ".join(parts[2:-1])
+        else:
+            username  = ""
+            full_name = " ".join(parts[2:])
     except (ValueError, IndexError):
         await message.answer("❌ Noto'g'ri format.")
         return
