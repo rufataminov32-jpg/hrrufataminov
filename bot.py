@@ -151,11 +151,11 @@ async def handle_message(message: Message):
 
     now_uz = datetime.now(TIMEZONE)
 
-    #if now_uz.hour < 9:
-      #  return
+    if now_uz.hour < 9:
+        return
 
-    #if now_uz.hour >= REPORT_HOUR:
-       # return
+    if now_uz.hour >= REPORT_HOUR:
+        return
 
     today = now_uz.date().isoformat()
 
